@@ -1,0 +1,49 @@
+<form>
+  <mat-form-field>
+    <input [(ngModel)]="calculateTo" name="calculateTo" matInput type="number" placeholder="To" value="13">
+  </mat-form-field>
+  <mat-form-field>
+    <input [(ngModel)]="calculateFrom" name="calculateFrom" matInput type="number" placeholder="From" value="6">
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="calculateFodder($event)"
+  >Calculate</button>
+</form>
+
+<section *ngIf="calculatedData">
+  <h1>Required Heroes</h1>
+  <ul>
+    <li *ngIf="calculatedData.main">
+      <b>Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary">
+      <b>Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary}}</span>
+    </li>
+    <li *ngIf="calculatedData.fodder">
+      <b>Fodder Heroes Needed:</b>&nbsp;<span>{{calculatedData.fodder}}</span>
+    </li>
+    <li *ngIf="calculatedData.sixStar">
+      <b>6* Heroes Needed:</b>&nbsp;<span>{{calculatedData.sixStar}}</span>
+    </li>
+    <li *ngIf="calculatedData.sevenStar">
+      <b>7* Heroes Needed:</b>&nbsp;<span>{{calculatedData.sevenStar}}</span>
+    </li>
+    <li *ngIf="calculatedData.eightStar">
+      <b>8* Heroes Needed:</b>&nbsp;<span>{{calculatedData.eightStar}}</span>
+    </li>
+    <li *ngIf="calculatedData.nineStar">
+      <b>9* Heroes Needed:</b>&nbsp;<span>{{calculatedData.nineStar}}</span>
+    </li>
+    <li *ngIf="calculatedData.tenStar">
+      <b>10* Heroes Needed:</b>&nbsp;<span>{{calculatedData.tenStar}}</span>
+    </li>
+    <li *ngIf="calculatedData.e1">
+      <b>E1 Heroes Needed:</b>&nbsp;<span>{{calculatedData.e1}}</span>
+    </li>
+    <li *ngIf="calculatedData.e2">
+      <b>E2 Heroes Needed:</b>&nbsp;<span>{{calculatedData.e2}}</span>
+    </li>
+  </ul>
+</section>

@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import { FodderCalculatorService } from './../../services/fodder-calculator.service';
-
 @Component({
   selector: 'fod-main-page',
   templateUrl: './main-page.component.html',
@@ -9,9 +7,5 @@ import { FodderCalculatorService } from './../../services/fodder-calculator.serv
 })
 export class MainPageComponent {
 
-  constructor( private fcs: FodderCalculatorService ) {
-    // TEST
-    console.log(fcs.fodderNeeded(10));
-    // TEST
-  }
+  constructor() {}
 }
