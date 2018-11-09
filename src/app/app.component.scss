@@ -1,3 +1,21 @@
-.fod-header-logo {
-  max-height: 32px;
+.fod-header {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.fod-header__logo {
+  cursor: pointer;
+  max-height: 28px;
+}
+
+.fod-header__nav {
+  & > span {
+    cursor: pointer;
+    font-size: 16px;
+  }
+}
+
+.fod-main-container {
+  padding: 16px;
 }

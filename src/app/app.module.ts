@@ -9,10 +9,14 @@ import { MaterialModule } from './modules/material.module';
 
 // Components
 import { AppComponent } from './app.component';
+import { ShardsPageComponent } from './components/shards-page/shards-page.component';
+import { MainPageComponent } from './components/main-page/main-page.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShardsPageComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,

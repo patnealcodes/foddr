@@ -1,3 +1,13 @@
-<mat-toolbar color="primary">
-  <img class="fod-header-logo" src="/assets/foddr-logo-white.png" alt="foddr">
+<mat-toolbar class="fod-header" color="primary">
+  <div>
+    <img [routerLink]="['']" class="fod-header__logo" src="/assets/foddr-logo-white.png" alt="foddr">
+    <span>(beta)</span>
+  </div>
+  <!-- <nav class="fod-header__nav">
+    <span [routerLink]="['/shards']">Shards</span>
+  </nav> -->
 </mat-toolbar>
+
+<main class="fod-main-container">
+  <router-outlet></router-outlet>
+</main>
