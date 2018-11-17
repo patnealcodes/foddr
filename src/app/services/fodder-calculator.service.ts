@@ -33,6 +33,94 @@ export class FodderCalculatorService {
     return total;
   }
 
+  recursiveFodderNeeded( to: number, from: number = 5 ) {
+    const total = this.fodderNeeded(to, from);
+
+    if (total.tenStar) {
+      for (let i = 0; i < total.tenStar; i++) {
+        let currentHero: number;
+
+        for (let j = 2; j < 21; j++) {
+          if (!total[`main${j}`]) {
+            currentHero = j;
+            break;
+          }
+        }
+        const tenStarTotal = this.fodderNeeded(10);
+
+        for (const key of Object.keys(tenStarTotal)) {
+          const tenStarTotalKeyVal = tenStarTotal[key];
+          if (key === 'main' || key === 'secondary') {
+            console.log(currentHero);
+            total[`${key}${currentHero}`] =
+              total[`${key}${currentHero}`] ? total[`${key}${currentHero}`] += tenStarTotalKeyVal : tenStarTotalKeyVal;
+          } else {
+            total[key] = total[key] ? total[key] += tenStarTotalKeyVal : tenStarTotalKeyVal;
+          }
+        }
+
+        total.tenStar--;
+      }
+    }
+
+    if (total.nineStar) {
+      for (let i = 0; i < total.nineStar; i++) {
+        let currentHero: number;
+
+        for (let j = 2; j < 21; j++) {
+          if (!total[`main${j}`]) {
+            currentHero = j;
+            break;
+          }
+        }
+        const nineStarTotal = this.fodderNeeded(9);
+
+        for (const key of Object.keys(nineStarTotal)) {
+          const nineStarTotalKeyVal = nineStarTotal[key];
+          if (key === 'main' || key === 'secondary') {
+            console.log(currentHero);
+            total[`${key}${currentHero}`] =
+              total[`${key}${currentHero}`] ? total[`${key}${currentHero}`] += nineStarTotalKeyVal : nineStarTotalKeyVal;
+          } else {
+            total[key] = total[key] ? total[key] += nineStarTotalKeyVal : nineStarTotalKeyVal;
+          }
+        }
+
+      }
+      total.nineStar = 0;
+    }
+
+    if (total.sixStar) {
+      for (let i = 0; i < total.sixStar; i++) {
+        let currentHero: number;
+
+        for (let j = 2; j < 21; j++) {
+          if (!total[`main${j}`]) {
+            currentHero = j;
+            break;
+          }
+        }
+
+        const sixStarTotal = this.fodderNeeded(6);
+
+        for (const key of Object.keys(sixStarTotal)) {
+          const sixStarTotalKeyVal = sixStarTotal[key];
+          if (key === 'main' || key === 'secondary') {
+            console.log(currentHero);
+            total[`${key}${currentHero}`] =
+              total[`${key}${currentHero}`] ? total[`${key}${currentHero}`] += sixStarTotalKeyVal : sixStarTotalKeyVal;
+          } else {
+            total[key] = total[key] ? total[key] += sixStarTotalKeyVal : sixStarTotalKeyVal;
+          }
+        }
+
+      }
+      total.sixStar = 0;
+    }
+
+    return total;
+  }
+
   e3( hero?: string ): Fodder {
     return {
       tenStar: 1

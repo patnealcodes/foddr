@@ -18,8 +18,11 @@ export class CalculateFodderComponent {
 
   calculateFodder(e) {
     e.preventDefault();
-    console.log(this.fcs.fodderNeeded(this.calculateTo, this.calculateFrom));
     this.calculatedData = this.fcs.fodderNeeded(this.calculateTo, this.calculateFrom);
+  }
+  recursiveCalculateFodder(e) {
+    e.preventDefault();
+    this.calculatedData = this.fcs.recursiveFodderNeeded(this.calculateTo, this.calculateFrom);
   }
 
 }

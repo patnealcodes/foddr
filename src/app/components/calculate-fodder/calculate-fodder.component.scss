@@ -1,0 +1,10 @@
+.fod-calculate-fodder-form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+::ng-deep .mat-form-field-wrapper {
+  width: 4em;
+
+}

@@ -1,15 +1,34 @@
-<form>
+<form class="fod-calculate-fodder-form">
   <mat-form-field>
-    <input [(ngModel)]="calculateTo" name="calculateTo" matInput type="number" placeholder="To" value="13">
+    <input
+      [(ngModel)]="calculateTo"
+      matInput
+      name="calculateTo"
+      type="number"
+      placeholder="To"
+      value="13">
   </mat-form-field>
+
   <mat-form-field>
-    <input [(ngModel)]="calculateFrom" name="calculateFrom" matInput type="number" placeholder="From" value="6">
+    <input
+      [(ngModel)]="calculateFrom"
+      matInput
+      name="calculateFrom"
+      type="number"
+      placeholder="From"
+      value="6">
   </mat-form-field>
+
   <button
     mat-raised-button
     color="primary"
     (click)="calculateFodder($event)"
   >Calculate</button>
+  <button
+    mat-raised-button
+    color="warn"
+    (click)="recursiveCalculateFodder($event)"
+  >Recursive</button>
 </form>
 
 <section *ngIf="calculatedData">
@@ -18,8 +37,122 @@
     <li *ngIf="calculatedData.main">
       <b>Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main}}</span>
     </li>
+    <li *ngIf="calculatedData.main2">
+      <b>2nd Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main2}}</span>
+    </li>
+    <li *ngIf="calculatedData.main3">
+      <b>3rd Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main3}}</span>
+    </li>
+    <li *ngIf="calculatedData.main4">
+      <b>4th Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main4}}</span>
+    </li>
+    <li *ngIf="calculatedData.main5">
+      <b>5th Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main5}}</span>
+    </li>
+    <li *ngIf="calculatedData.main6">
+      <b>6th Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main6}}</span>
+    </li>
+    <li *ngIf="calculatedData.main7">
+      <b>7th Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main7}}</span>
+    </li>
+    <li *ngIf="calculatedData.main8">
+      <b>8th Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main8}}</span>
+    </li>
+    <li *ngIf="calculatedData.main9">
+      <b>9th Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main9}}</span>
+    </li>
+    <li *ngIf="calculatedData.main10">
+      <b>10th Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main10}}</span>
+    </li>
+    <li *ngIf="calculatedData.main11">
+      <b>11th Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main11}}</span>
+    </li>
+    <li *ngIf="calculatedData.main12">
+      <b>12th Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main12}}</span>
+    </li>
+    <li *ngIf="calculatedData.main13">
+      <b>13th Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main13}}</span>
+    </li>
+    <li *ngIf="calculatedData.main14">
+      <b>14th Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main14}}</span>
+    </li>
+    <li *ngIf="calculatedData.main15">
+      <b>15th Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main15}}</span>
+    </li>
+    <li *ngIf="calculatedData.main16">
+      <b>16th Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main16}}</span>
+    </li>
+    <li *ngIf="calculatedData.main17">
+      <b>17th Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main17}}</span>
+    </li>
+    <li *ngIf="calculatedData.main18">
+      <b>18th Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main18}}</span>
+    </li>
+    <li *ngIf="calculatedData.main19">
+      <b>19th Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main19}}</span>
+    </li>
+    <li *ngIf="calculatedData.main20">
+      <b>20th Main Heroes Needed:</b>&nbsp;<span>{{calculatedData.main20}}</span>
+    </li>
     <li *ngIf="calculatedData.secondary">
       <b>Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary2">
+      <b>2nd Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary2}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary3">
+      <b>3rd Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary3}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary4">
+      <b>4th Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary4}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary5">
+      <b>5th Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary5}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary6">
+      <b>6th Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary6}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary7">
+      <b>7th Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary7}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary8">
+      <b>8th Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary8}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary9">
+      <b>9th Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary9}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary10">
+      <b>10th Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary10}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary11">
+      <b>11th Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary11}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary12">
+      <b>12th Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary12}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary13">
+      <b>13th Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary13}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary14">
+      <b>14th Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary14}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary15">
+      <b>15th Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary15}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary16">
+      <b>16th Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary16}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary17">
+      <b>17th Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary17}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary18">
+      <b>18th Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary18}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary19">
+      <b>19th Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary19}}</span>
+    </li>
+    <li *ngIf="calculatedData.secondary20">
+      <b>20th Secondary Heroes Needed:</b>&nbsp;<span>{{calculatedData.secondary20}}</span>
     </li>
     <li *ngIf="calculatedData.fodder">
       <b>Fodder Heroes Needed:</b>&nbsp;<span>{{calculatedData.fodder}}</span>
